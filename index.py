@@ -1,76 +1,63 @@
-"""
-GSE301 Data Science: Python Fundamentals
-Student Academic Performance Analysis System
-
-This system demonstrates all core Python concepts including:
-- Variables and data types
-- Data structures (list, tuple, dictionary, set)
-- Control flow (if/elif/else, match/case)
-- Error handling (try/except)
-- Functions and logical operators
-- List slicing and set operations
-"""
-
 # ============================================
-# PART 1: DATA COLLECTION AND STORAGE
+# DATA COLLECTION AND STORAGE
 # ============================================
 
-# Task 1.1: Variable Declaration and Data Types (Individual Student Example)
-student_name = "Rasheed Fatia"
-matric_number = "23/60AC389"
-age = 21
-cgpa = 4.81
+# Variable Declaration and Data Types (Individual Student Example)
+student_name = "Ahmad Yusuff"
+matric_number = "21/60AC389"
+age = 30
+cgpa = 4.95
 is_active = True
-courses_registered = ["ELE567", "Data Science", "Statistics"]
-grades = {"Python": "A", "Statistics": "A", "Data Science": "A"}
+courses_registered = ["ANP 517", "ANP 519","ARP 534", "STA 343"]
+grades = {"ANP 517": "A", "ANP 519": "A", "ARP 534": "A", "STA 343": "A"}
 
-# Task 1.2: Data Structures for Multiple Students
+# Data Structures for Multiple Students
 # List of student names
 student_names = [
-    "Rasheed Fatia",
+    "Rasheed Fathia",
     "Yusuf Adeoye", 
     "Moses Oyedele",
-    "Timi Abidoye",
+    "Bamidele Fathia Ajoke",
     "Nimah Nina"
 ]
 
 # Dictionary for each student's full profile (stored in a list)
 student_list = [
     {
-        "name": "Rasheed Fatia",
+        "name": "Rasheed Fathia",
         "matric_number": "23/60AC389",
         "age": 21,
         "cgpa": 4.81,
         "is_active": True,
-        "courses": ["ELE567", "Data Science", "Statistics"],
-        "grades": {"Python": "A", "Statistics": "A", "Data Science": "A"},
+        "courses": ["ANP 517", "ANP 519","ARP 534", "STA 343"],
+        "grades": {"ANP 517": "A", "ANP 519": "B", "ARP 534": "A", "STA 343": "A"},
         "outstanding_courses": 0
     },
     {
         "name": "Yusuf Adeoye",
         "matric_number": "23/70JC093",
-        "age": 20,
-        "cgpa": 3.45,
+        "age": 22,
+        "cgpa": 4.45,
         "is_active": True,
-        "courses": ["Python", "Algorithms", "Databases"],
-        "grades": {"Python": "B", "Algorithms": "B", "Databases": "A"},
+        "courses": ["PYTHON", "ALGORITHMS","DATABASES", "DATA SCIENCE"],
+        "grades": {"PYTHON": "B", "ALGORITHMS": "B", "DATABASES": "A", "DATA SCIENCE": "A"},
         "outstanding_courses": 0
     },
     {
         "name": "Moses Oyedele",
         "matric_number": "23/80DC045",
-        "age": 22,
+        "age": 18,
         "cgpa": 2.95,
         "is_active": True,
         "courses": ["Web Development", "Python", "Networking"],
-        "grades": {"Web Development": "C", "Python": "B", "Networking": "C"},
+        "grades": {"Web Development": "F", "Python": "B", "Networking": "C"},
         "outstanding_courses": 1
     },
     {
-        "name": "Timi Abidoye",
-        "matric_number": "23/90EC078",
-        "age": 19,
-        "cgpa": 4.25,
+        "name": "Bamidele Fathia Ajoke",
+        "matric_number": "22/90EC078",
+        "age": 21,
+        "cgpa": 4.85,
         "is_active": True,
         "courses": ["Data Science", "Machine Learning", "Python"],
         "grades": {"Data Science": "A", "Machine Learning": "A", "Python": "B"},
@@ -88,35 +75,35 @@ student_list = [
     }
 ]
 
-# Set to store unique courses offered in the department
+# Set to store unique courses offered in the dt
 unique_courses = {
     "Python", "Data Science", "Statistics", "Algorithms", 
     "Databases", "Web Development", "Networking", 
-    "Machine Learning", "Data Mining", "ELE567"
+    "Machine Learning", "Data Mining", "ANP 517"
 }
 
-# Tuple for fixed department information
-department_info = ("Computer Science Department", "Faculty of Technology", 2025)
+# Tuple for fixed dt information
+dt_info = ("Agriculture", "Faculty of Agric", 2025)
 
-# Sample assignment scores for Task 3.1 (List Operations)
-assignment_scores = [45, 78, 92, 65, 88, 73, 95, 81, 69, 87]
+# Sample assignment scores for(List Operations)
+assignment_scores = [55, 67, 72, 95, 68, 73, 88, 91, 89, 87]
 
-# Sets for Task 3.2 (Set Operations)
-set_pass = {"Rasheed Fatia", "Yusuf Adeoye", "Timi Abidoye", "Nimah Nina"}  # Students who passed Python
-set_merit = {"Rasheed Fatia", "Timi Abidoye"}  # Students with CGPA above 4.0
+# Sets for(Set Operations)
+set_pass = {"Ahmad Yusuff", "Yusuf Adeoye", "Moses Oyedele", "Bamidele Fathia Ajoke", "Nimah Nina"}  # Students who passed Python
+set_merit = {"Ahmad Yusuff","Bamidele Fathia Ajoke", "Yusuf Adeoye"}  # Students with CGPA above 4.0
 
 
 # ============================================
-# PART 2: DATA PROCESSING AND LOGIC
+# DATA PROCESSING AND LOGIC
 # ============================================
 
-# Task 2.1: Conditional Statements for Grading
+# Conditional Statements for Grading
 def calculate_grade(score):
     """
-    Converts numeric score (0-100) to letter grade using IF/ELIF/ELSE
+    Converts numeric score (0-90) to letter grade using IF/ELIF/ELSE
     
     Args:
-        score (int/float): Numeric score between 0 and 100
+        score (int/float): Numeric score between 0 and 90
         
     Returns:
         str: Letter grade (A, B, C, D, E, F)
@@ -159,7 +146,7 @@ def grade_feedback(grade):
             print("Invalid grade.")
 
 
-# Task 2.2: Type Conversion and Validation
+# Type Conversion and Validation
 def validate_and_convert_input():
     """
     Asks user for age and CGPA as strings, converts them to int and float,
@@ -195,10 +182,10 @@ def validate_and_convert_input():
 
 
 # ============================================
-# PART 3: ANALYSIS AND REPORTING
+# ANALYSIS AND REPORTING
 # ============================================
 
-# Task 3.1: List Operations and Slicing
+# List Operations and Slicing
 def analyze_assignment_scores():
     """
     Demonstrates list slicing operations on assignment scores
@@ -223,7 +210,7 @@ def analyze_assignment_scores():
     print("="*50)
 
 
-# Task 3.2: Set Operations
+# Set Operations
 def analyze_student_sets():
     """
     Performs set operations to analyze student performance
@@ -249,10 +236,10 @@ def analyze_student_sets():
 
 
 # ============================================
-# PART 4: INTERACTIVE MENU SYSTEM
+# INTERACTIVE MENU SYSTEM
 # ============================================
 
-# Task 4.2: Eligibility Checker
+# Eligibility Checker
 def check_eligibility(student):
     """
     Uses logical operators (and, or) to determine graduation eligibility
@@ -387,10 +374,10 @@ def add_new_student(students):
 
 
 # ============================================
-# PART 5: ADVANCED CHALLENGES (OPTIONAL)
+# ADVANCED CHALLENGES (OPTIONAL)
 # ============================================
 
-# Task 5.1: Nested Data Processing
+# Nested Data Processing
 def analyze_nested_scores(nested_data):
     """
     Analyzes nested dictionary of students and their scores
@@ -422,7 +409,7 @@ def analyze_nested_scores(nested_data):
     print("="*50)
 
 
-# Task 5.2: Pattern Matching with MATCH CASE
+# Pattern Matching with MATCH CASE
 def detect_data_type(data):
     """
     Uses MATCH CASE to identify the type of input data and return formatted summary
@@ -483,16 +470,16 @@ def main():
     print("="*50)
     print("Loading student records...")
     print(f"{len(student_list)} student profiles loaded successfully.")
-    print(f"Department: {department_info[0]}")
-    print(f"Faculty: {department_info[1]}")
-    print(f"Academic Year: {department_info[2]}")
+    print(f"Dt: {dt_info[0]}")
+    print(f"Faculty: {dt_info[1]}")
+    print(f"Academic Year: {dt_info[2]}")
     
     # Main menu loop
     while True:
         display_menu()
         choice = input("Enter your choice: ")
         
-        # Task 4.1: Menu using MATCH CASE
+        # Menu using MATCH CASE
         match choice:
             case "1":
                 # View all students
